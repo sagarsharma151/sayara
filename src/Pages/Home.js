@@ -52,6 +52,11 @@ import {FetchdataGetquotation} from '../Service'
 const useStyles = makeStyles(theme => ({
   selectinput:{
     "& .css-1km1ehz":{
+      display:'flex',
+      justifyContent:'space-between'
+    },
+    "& .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root":{
+      display:'flex',
       justifyContent:'space-between'
     }
   },
