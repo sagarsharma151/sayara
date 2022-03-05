@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from '../src/Components/Login'
 import "./style/index.scss";
 import Blog from '../src/Components/Blog';
-import Otp from '../src/Components/Otp'
+// import Otp from '../src/Components/Otp'
 // Components
 // import Header from './Header'
 import BlogRead from '../src/Components/BlogRead'

@@ -5,7 +5,7 @@ import Avatar from '@mui/material/Avatar';
 import Fram7 from '../images/Frame 7.png'
 import Logo from '../Logo'
 
-import OtpInput from "react-otp-input";
+// import OtpInput from "react-otp-input";
 import React, {
     createRef,
     useState,
@@ -151,7 +151,7 @@ window.confirmationResult.confirm(code).then((result) => {
   <div style={{width:'50%',margin:'0 auto'}}>
   <h1 className="login-heading">Welcome to Sayaraa!</h1>
   <div className='otp'>
-       <OtpInput
+       {/* <OtpInput
         value={code}
         onChange={handleChange}
         numInputs={6}
@@ -173,7 +173,7 @@ window.confirmationResult.confirm(code).then((result) => {
           border: "1px solid #CFD3DB",
           outline: "none"
         }}
-      />
+      /> */}
        </div>
   </div>
                       </Grid>
