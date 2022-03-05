@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Ubuntu:wght@500&display=swap');
+.car-img-div {
+    width: 100%;
+    height: auto;
+}
+.car-img-div img {
+    width: 100%;
+    height: auto;
+}
+// .main{
+//     border-bottom: 2px solid black;
+// }
+
+.card-heading h1{
+    font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+
+/* identical to box height, or 24px */
+
+
+color: #151C28;
+}
+
+.card-heading p{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 38px;
+/* identical to box height, or 17px */
+
+
+color: #151C28;
+}
+.para-style-carwash{
+    width: 92%;
+}
+.cardwash-list{
+    display: flex;
+    // justify-content: space-between;
+}
+.cardwash-listimgdiv{
+    flex-basis: 2%;
+}
+.cardwash-listimgdiv img{
+    width: 100%;
+    height: auto;
+    margin-top: 14px;
+}
+.carwash-contentlist{
+    padding-left: 13px;
+}
+.carwash-contentlist p{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+/* identical to box height, or 17px */
+
+
+color: #585562;
+}
+.card-ratings-withcontent{
+    display: flex;
+    justify-content: space-between;
+}
+.ratings-div{
+  flex-basis: 3%;
+}
+.ratings-div img{
+    width: 100%;
+    height: auto;
+    margin-top: 9px;
+}
+.border{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid rgba(211, 215, 223, 0.6);
+}

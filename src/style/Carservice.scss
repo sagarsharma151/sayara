@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Ubuntu:wght@500&display=swap');
+.car-img-div1 {
+    width: 100%;
+    height: auto;
+}
+.car-img-div1 img {
+    width: 100%;
+    height: auto;
+}
+// .main{
+//     border-bottom: 2px solid black;
+// }
+
+.card-heading1 h1{
+    font-family: 'Poppins', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+
+/* identical to box height, or 24px */
+
+
+color: #151C28;
+}
+
+.card-heading1 p{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 29px;
+/* identical to box height, or 17px */
+
+
+color: #151C28;
+}
+
+.cardwash-list1{
+    display: flex;
+    // justify-content: space-between;
+}
+.cardwash-listimgdiv1{
+    flex-basis: 2%;
+}
+.cardwash-listimgdiv1 img{
+    width: 100%;
+    height: auto;
+    margin-top: 14px;
+}
+.carwash-contentlist1{
+    padding-left: 13px;
+}
+.carwash-contentlist1 p{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+/* identical to box height, or 17px */
+
+
+color: #585562;
+}
+.card-ratings-withcontent1{
+    display: flex;
+    justify-content: space-between;
+}
+.ratings-div1{
+  flex-basis: 10%;
+}
+.ratings-div1 img{
+    width: 100%;
+    height: auto;
+    margin-top: 9px;
+}
+.border1{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid rgba(211, 215, 223, 0.6);
+}
+
+.btn-group{
+    display: flex;
+}
+.service-btn{
+width: 108px;
+height: 41px;
+background: #FB7E15;
+border-radius: 50px;
+border:none;
+cursor: pointer;
+}
+
+.product-btn{
+    width: 112px;
+height: 41px;
+
+background: #FFFFFF;
+border: 1px solid rgba(88, 85, 98, 0.27);
+box-sizing: border-box;
+border-radius: 50px;
+cursor: pointer;
+margin-left: 20px;
+}
+.card-main-heading1{
+    display: flex;
+    justify-content: space-between;
+}
+.add-div1{
+    display: flex;
+}
+.add-div1 .add-para1{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    
+    text-align: right;
+    letter-spacing: 0.02em;
+    
+    color: #5E94E0;
+}
+.line1{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+text-align: right;
+letter-spacing: 0.02em;
+text-decoration-line: line-through;
+color: #585562;
+padding-left: 20px;
+}
+
+.ratingswithcontent-div1{
+    display: flex;
+    background: red;
+    width: 41px;
+    height: 23px;
+    right: 40px;
+    top: 64px;
+    background: #FEF7F1;
+    border-radius: 4px;
+    justify-content: center;
+}
+.rate-flex1{
+    flex-basis: 24%;
+    height: auto;
+}
+.rates1{
+    padding-left: 4px;
+}

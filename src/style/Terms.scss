@@ -1,0 +1,50 @@
+.terms-heading{
+    font-family: 'poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 48px;
+color: #151C28;
+}
+
+.terms-para{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 160%;
+color: #585562;
+
+}
+.sec-terms-heading{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 160%;
+/* or 22px */
+
+
+color: #151C28;
+}
+
+.privacyandtermsmain{
+    width:800px;
+    margin:1.5rem auto;
+}
+
+@media screen and (max-width:600px) {
+    .privacyandtermsmain{
+        width:100%;
+        margin:1.5rem auto;
+        padding: 12px 20px;
+    }
+}
+
+@media  (min-width:768px) and (max-width:968) {
+    .privacyandtermsmain{
+        width:100%;
+        margin:1.5rem auto;
+        padding: 12px 30px;
+    }
+}

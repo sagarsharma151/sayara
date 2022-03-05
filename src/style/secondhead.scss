@@ -1,0 +1,168 @@
+.secondhead{
+   
+    padding-left: 0;
+    padding-top: 9px;
+}
+.sechead-bg{
+    background: linear-gradient(90.27deg, #151C28 0.05%, #1C2536 110.35%);
+}
+
+// .nameoffering{
+//     margin-top: 20px !important;
+// }
+.button-offer{
+    margin-top: 20px !important;
+}
+.second-headstar{
+    width:70%;
+    margin:0 auto;
+    height:100%;
+     display:flex;
+     padding:5px;
+}
+.homeNames{
+    height: 50px;
+    width: 220px;
+    outline: none;
+    font-size: 15px;
+    font-family: 'Poppins';
+    padding: 5px 5px;
+    background: #FFFFFF;
+  border: 1px solid rgba(88, 85, 98, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  margin-top: 20px;
+  }
+  .email-home{
+    margin-right: 8px;
+  }
+  .homeNames::placeholder{
+    padding: 5px 12px;
+    font-size: 16px;
+  }
+.secondhead-img-div{
+    width:33px;
+    height:auto;
+}
+.head-img{
+    width:100%;
+    height:auto
+}
+.offeringhead-content{
+    padding:6px;
+     margin-left: 12px;
+}
+.offeringsecondhead-content-h1{
+    font-size:16px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+// font-size: 18px;
+// line-height: 120%;
+color: #F4F8FF;
+
+}
+.head-social{
+    width:70%;
+    margin:0 auto;
+    height:100%;
+     display:flex;
+     padding:5px;
+}
+
+.social-imgdiv1{width:100px;
+    height:auto;
+    margin-top:5px;
+}
+.social-img1{
+    width:100%;
+    height:auto;
+}
+.social-imgdiv2{
+    width:100px;
+    height:auto;
+    margin-left:25px;
+}
+.social-img2{
+    width:100%;
+    height:auto;
+}
+
+.main-container{
+    max-width:1200px;
+    margin:2rem auto;
+}
+
+.left-heading{
+    color:#585562;
+    font-size:14px;
+    font-style:'poppins';
+}
+
+.selects1{
+    margin:0 !important;
+    margin-top:20px !important;
+}
+.selects2{
+    margin:0 !important;
+    margin-top:20px !important;
+}
+.explore-heading{
+font-family: 'Poppins',sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+padding: 0px 9px;
+line-height: 120%;
+/* identical to box height, or 29px */
+
+letter-spacing: 0.01em;
+
+color: #151C28;
+}
+// .dropdowns{
+//     padding-left: 33px !important;
+//   }
+.search-input{
+    background: #FFFFFF;
+border: 1px solid rgba(88, 85, 98, 0.27);
+box-sizing: border-box;
+border-radius: 34px;
+padding: 12px 30px;
+}
+@media screen and (max-width:600px){
+    .nameoffering{
+        margin-left: 16px;
+    }
+    .dropdowns{
+        padding-left: 0px !important;
+      }
+    .homeNames{
+       width: 145px;
+        outline: none;
+        font-size: 15px;
+        font-family: 'Poppins';
+        padding: 5px 5px;
+        background: #FFFFFF;
+      border: 1px solid rgba(88, 85, 98, 0.2);
+      box-sizing: border-box;
+      border-radius: 4px;
+      margin-top: 0px;
+      }
+    .left-heading{
+    text-align: center;
+    }
+    .selects1{
+        margin-left: 13% !important;
+    }
+    .selects2{
+        margin-left: 13% !important;
+    }
+    .explore-heading{
+        text-align: center;
+    }
+    .search-container{
+        width: 93%;
+        margin: 0 auto;
+    }
+}
