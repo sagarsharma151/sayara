@@ -55,6 +55,9 @@ const useStyles = makeStyles(theme => ({
       display:'flex',
       justifyContent:'space-between'
     },
+    "& .css-qiwgdb.css-qiwgdb.css-qiwgdb":{
+      display:'flex'
+    },
     "& .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root":{
       display:'flex',
       justifyContent:'space-between'
