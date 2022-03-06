@@ -131,14 +131,18 @@ border-radius: 34px;
 padding: 12px 30px;
 }
 @media screen and (max-width:600px){
-    .nameoffering{
-        margin-left: 16px;
-    }
+    // .nameoffering{
+    //     margin-left: 16px;
+    // }
     .dropdowns{
         padding-left: 0px !important;
       }
+     
+      .select-name{
+          font-size: 10px;
+      }
     .homeNames{
-       width: 145px;
+       width:100%;
         outline: none;
         font-size: 15px;
         font-family: 'Poppins';
