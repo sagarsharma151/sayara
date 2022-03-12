@@ -239,12 +239,12 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
           <div className="card_title title-white">
             <p>
               Get an{" "}
-              <span style={{ fontWeight: "bold" }}>instant discount</span>{" "}
-              <br /> of{" "}
+              <span style={{ fontWeight: "bold" }}>Get instant discount</span>{" "}
+              <br /> of {num.promo_discount}%{" "}
               <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-                AED 10
+                for the
               </span>{" "}
-              for the <br />
+              steam wash<br />
               <br />{" "}
             </p>
             <div className="homeslider-main-div">
