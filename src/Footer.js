@@ -13,6 +13,12 @@ import linkedin from '../src/images/linkedin.png'
 import Logofooter from '../src/images/logofooter.png'
 import { Link } from "react-router-dom";
 const Footer =()=>{
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
     return (
         <>
          {/*footer */}
@@ -55,7 +61,7 @@ const Footer =()=>{
           >
           <div>
            <div> <Link className='footer-links' to='/blog'>Blog</Link></div>
-           <div> <Link className='footer-links' to='/' >How it works</Link></div>
+           {/* <div> <Link className='footer-links' to='/' >How it works</Link></div> */}
            <div> <Link className='footer-links' to='/privacyandterms' >Terms & Conditions</Link></div>
             
            </div>
@@ -81,7 +87,11 @@ const Footer =()=>{
             className="footer-contents-flex2"
           >
           <div style={{width:'60px',margin:'2rem'}}>
-           <div> <Link className='offer-heading' to='/'><img src={footerbtn} style={{width:'100%',height:'auto'}} alt=''/></Link></div>
+           <div onClick={scrollToTop}> 
+             {/* <Link className='offer-heading' to='/'> */}
+               <img src={footerbtn} style={{width:'100%',height:'auto',cursor:'pointer'}} alt=''/>
+               {/* </Link> */}
+               </div>
             
            </div>
           </div>

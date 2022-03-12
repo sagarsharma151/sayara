@@ -23,11 +23,12 @@ const ModallistError = (error) => {
   };
 };
 
-export const FetchdataModallist = () => {
+export const FetchdataModallist = (value) => {
+  console.log(value,'brand_idbrand_idbrand_ffffffffffffffffffffffffffffffffffffffffffffffffff')
   return (dispatch) => {
     dispatch(ModallistRequest());
-
- axios.get("https://sayaraagroup.com/beta/WebsiteApi/model_list/?brand_id=20")
+    // /?brand_id=20
+ axios.get(`https://sayaraagroup.com/beta/WebsiteApi/model_list/?brand_id=${value}`)
       .then((response) => {
         const ModalList = response.data;
 

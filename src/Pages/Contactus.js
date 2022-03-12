@@ -9,7 +9,9 @@ import Call from '../images/Call.png';
 import Message from '../images/Message.png'
 import Header from '../Header'
 import {FetchdataContactus} from '../Service';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 const Contactus = ()=>{
   const dispatch = useDispatch();
   const newData = useSelector((state) => state.ContactUs.Contactus);
@@ -39,8 +41,12 @@ const Contactus = ()=>{
   // const [contactPhone,setContactPhone] = useState("");
   // const [contactMessage,setContactMessage] = useState("");
   const onSubmited = e => {
+    if(inputValues){
 		e.preventDefault();
-
+    toast.success("Thanks Your request received", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: false,
+    });
 		// const newUser = {
 		// 	name: name,
 		// 	contactEmail: contactEmail,
@@ -50,6 +56,13 @@ const Contactus = ()=>{
 		// };
     dispatch(FetchdataContactus(inputValues));
 		console.log(inputValues,'inputValues');
+    setInputValue({
+      contact_name: "",
+      contact_email: "",
+      brand_name: "",
+      model_name: "",
+    });
+  }
 	};
     return(
         <>
@@ -113,15 +126,15 @@ const Contactus = ()=>{
              <div className='conractform-div'>
                <div><h1 className='form-head'>Write us!</h1></div>
 <form onSubmit={onSubmited}>
-               <div className='contact-input-div forminput'><input type='text'  name='contact_name' value={inputValues.contact_name}  className='input1'  placeholder='Full Name' onChange={(e) => handleChange(e)}/></div>
+               <div className='contact-input-div forminput'><input type='text' required  name='contact_name' value={inputValues.contact_name}  className='input1'  placeholder='Full Name' onChange={(e) => handleChange(e)}/></div>
 
-               <div className='contact-input-div forminput'><input type='text' name="contact_email" value={inputValues.contact_email}  className='input1' placeholder='Email ID'  onChange={(e) => handleChange(e)}/></div>
+               <div className='contact-input-div forminput'><input type='text' required name="contact_email" value={inputValues.contact_email}  className='input1' placeholder='Email ID'  onChange={(e) => handleChange(e)}/></div>
 
-               <div className='contact-input-div forminput'><input type='text' name="contact_subject" value={inputValues.contact_subject}  className='input1' placeholder='contact' onChange={(e) => handleChange(e)}/></div>
+               <div className='contact-input-div forminput'><input type='text' required name="contact_subject" value={inputValues.contact_subject}  className='input1' placeholder='contact' onChange={(e) => handleChange(e)}/></div>
  
-               <div className='contact-input-div forminput'><input type='text' name="contact_phone" value={inputValues.contact_phone}  className='input1'  placeholder='Mobile Number ' onChange={(e) => handleChange(e)}/></div>
+               <div className='contact-input-div forminput'><input type='text' required name="contact_phone" value={inputValues.contact_phone}  className='input1'  placeholder='Mobile Number ' onChange={(e) => handleChange(e)}/></div>
 
-               <div className='textarea-div forminput'><textarea type='text' name="contact_message" value={inputValues.contact_message}  className='input1'  placeholder='Message' onChange={(e) => handleChange(e)}/></div>
+               <div className='textarea-div forminput'><textarea type='text' required name="contact_message" value={inputValues.contact_message}  className='input1'  placeholder='Message' onChange={(e) => handleChange(e)}/></div>
 
                <div className='contactbtn-div'><button type='submit' className='contactform-btn'>Submit</button></div>
             </form>

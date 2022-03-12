@@ -5,14 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { Fetchdata } from "../Service";
 import Custmerlist from "../Components/Custmerlist";
 import car from "../../src/images/download.png";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Partnerslider from "../Components/Partnerslider";
 import MobilePartnerslider from "../Components/Partnermobslider";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import { NavLink,useHistory  } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import CustmerMobilelist from "../Components/Custmermobile";
@@ -33,67 +33,60 @@ import car2 from "../../src/images/Frame 897.png";
 import car3 from "../../src/images/Frame 898.png";
 import workmobile from "../../src/images/Group 1007.png";
 import btnIcon from "../../src/images/btn-icon.png";
-// import { margin, width } from "@mui/system";
 import RightArrow from "../../src/images/Arrow - Right.png";
 import DblMobile from "../../src/images/dbl-mob.png";
 import appstore from "../../src/images/appstore.png";
 import googleplay from "../../src/images/googleplay.png";
 import Header from "../Header";
-// import Searchinput from "../Components/Searchinput";
 import { FetchdataBrandList } from "../Service";
-import {FetchdataModallist} from '../Service'
-import {FetchdataGetquotation} from '../Service'
-// const Item = styled(Paper)(({ theme }) => ({
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: "center",
-//   color: theme.palette.text.secondary,
-// }));
-const useStyles = makeStyles(theme => ({
-  selectinput:{
-    "& .css-1km1ehz":{
-      display:'flex',
-      justifyContent:'space-between'
+import { FetchdataModallist } from "../Service";
+import { FetchdataGetquotation } from "../Service";
+
+const useStyles = makeStyles((theme) => ({
+  selectinput: {
+    "& .css-1km1ehz": {
+      display: "flex",
+      justifyContent: "space-between",
     },
-    "& .css-qiwgdb.css-qiwgdb.css-qiwgdb":{
-      display:'flex'
+    "& .css-qiwgdb.css-qiwgdb.css-qiwgdb": {
+      display: "flex",
     },
-    "& .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root":{
-      display:'flex',
-      justifyContent:'space-between'
-    }
+    "& .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root": {
+      display: "flex",
+      justifyContent: "space-between",
+    },
   },
   FORM: {
     [theme.breakpoints.down("xs")]: {
-      minWidth:' 145px',
-      width: '145px',
-      height:"55px"
+      minWidth: " 145px",
+      width: "145px",
+      height: "55px",
     },
     [theme.breakpoints.between("sm", "md")]: {
-      minWidth:' 145px',
-      width: '145px',
-      minWidth:' 145px',
-      width: '145px',
+      minWidth: " 145px",
+      width: "145px",
+      minWidth: " 145px",
+      width: "145px",
     },
     "@media (min-width: 1280px)": {
-      minWidth:' 220px',
-    width: '220px'
+      minWidth: " 220px",
+      width: "220px",
     },
-  // "& .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root":{
-  //   minWidth:' 220px',
-  //   width: '220px'
-  // },
-  
-  //    '& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input':{
-  //      display: 'flex'
-  //    },
- 
-   },
-   select :{
-     "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":{
-       display:'flex'
-     }
-   }
+    // "& .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root":{
+    //   minWidth:' 220px',
+    //   width: '220px'
+    // },
+
+    //    '& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input':{
+    //      display: 'flex'
+    //    },
+  },
+  select: {
+    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+      {
+        display: "flex",
+      },
+  },
   // button: {
   //   color: "white",
   //   [theme.breakpoints.down("xs")]: {
@@ -135,7 +128,7 @@ function Arrow(props) {
 }
 toast.configure();
 const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
- 
+  const [modallist, setModallist] = React.useState([]);
   const classes = useStyles();
   const [imageslide, setSlide] = React.useState([]);
   // const [brand, setBrand] = React.useState("");
@@ -161,38 +154,40 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
   // React.useEffect(()=>{
   //   FetchdataModallist();
   // },[])
-  const onSubmited = e => {
+  const onSubmited = (e) => {
     e.preventDefault();
 
-  // const newUser = {
-  // 	contact_name: contact_name,
-  // 	contactEmail: contactEmail,
-  // 	brand_name: brand_name,
-  // 	contactPhone: contactPhone,
-  //   model_name:model_name
-  // };
+    // const newUser = {
+    // 	contact_name: contact_name,
+    // 	contactEmail: contactEmail,
+    // 	brand_name: brand_name,
+    // 	contactPhone: contactPhone,
+    //   model_name:model_name
+    // };
     dispatch(FetchdataGetquotation(inputValues));
-    if(inputValues){
+    if (inputValues) {
       toast.success("Thanks Your Quotation request received", {
         position: toast.POSITION.TOP_RIGHT,
-        autoClose: false
+        autoClose: false,
       });
-    
-    console.log(inputValues,'inputValues');
-    // const notify =()=>{ 
-     
-    //   }
-    setInputValue({
-      contact_name: "",
-      contact_email: "",
-      brand_name: "",
-      model_name: "",
-    });
+
+      console.log(inputValues, "inputValues");
+      // const notify =()=>{
+
+      //   }
+      setInputValue({
+        contact_name: "",
+        contact_email: "",
+        brand_name: "",
+        model_name: "",
+      });
+    }
   };
-  };
- 
+
   function handleChange(event) {
     const { name, value } = event.target;
+    console.log(value, "brand_idbrand_idbrand_idbrand_idbrand_idbrand_id");
+    dispatch(FetchdataModallist(value));
     setInputValue({ ...inputValues, [name]: value });
   }
   React.useEffect(() => {
@@ -207,7 +202,6 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
   // const handleChanges = (event) => {
   //   setBrand(event.target.value);
   // };
-
 
   var settingsweb = {
     dots: true,
@@ -236,7 +230,8 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
         <div className="card 1">
           <img
             src={`https://sayaraagroup.com/${num.image}`}
-            className="slider-images" alt=''
+            className="slider-images"
+            alt=""
           />
           <div className="card_heading heading-white">
             <p>{num.title}</p>
@@ -300,7 +295,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
       <div className="car-setting" key={index}>
         <div className="icon-maindiv-home">
           <div className="icon-div-homeicon">
-            <img src={data.image} className="icon-images-home" alt=''/>
+            <img src={data.image} className="icon-images-home" alt="" />
           </div>
 
           <div className="icon-maindiv-heading">
@@ -310,28 +305,23 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
       </div>
     ));
 
-  
- 
-
-
   // console.log('sdfldsflsflsf',ModalList.ModalList.data)
-        const [modallist,setModallist] = React.useState([])
-    // const [age, setAge] = React.useState("");
-    React.useEffect(()=>{
-        dispatch(FetchdataModallist()) ;
-    },[])
-    React.useEffect(()=>{
-        if(brandList && brandList.ModalList.ModalList.data){
-            setModallist(brandList.ModalList.ModalList.data)
-        }
-    },[brandList])
 
-    console.log('modallist',modallist)
-    // const handleChange = (event) => {
-    //     setAge(event.target.value);
-    //   };
+  // const [age, setAge] = React.useState("");
+  // React.useEffect(()=>{
+  //     dispatch(FetchdataModallist()) ;
+  // },[])
+  React.useEffect(() => {
+    if (brandList && brandList.ModalList.ModalList.data) {
+      setModallist(brandList.ModalList.ModalList.data);
+    }
+  }, [brandList]);
 
-    
+  console.log("modallist", modallist);
+  // const handleChange = (event) => {
+  //     setAge(event.target.value);
+  //   };
+
   return (
     <div style={{ maxWidth: "100%" }}>
       <Header />
@@ -346,25 +336,28 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
               </p> */}
             </div>
             <form onSubmit={onSubmited}>
-            <div className="dropdown-group">
-             
-              <FormControl sx={{ m: 1, ml: 0, mt: 2 }} className={classes.FORM}>
-                <Select
-                  style={{ height: "44px", display: "flex" }}
-                  name="brand_name" value={inputValues.brand_name}
-                  onChange={(e) => handleChange(e)}
-                  displayEmpty
-                  required
-                  inputProps={{ "aria-label": "Without label" }}
-                 className={`${classes.select} ${classes.selectinput}`}
+              <div className="dropdown-group">
+                <FormControl
+                  sx={{ m: 1, ml: 0, mt: 2 }}
+                  className={classes.FORM}
                 >
-                  <MenuItem value="">
-                    <em>Select Brand Name</em>
-                  </MenuItem>
-                  
-                  {brandlist.map((num, i) => (
-                    <MenuItem value={num.brand_name} key={i} >
-                      {/* <div
+                  <Select
+                    style={{ height: "44px", display: "flex" }}
+                    name="brand_name"
+                    value={inputValues.brand_name}
+                    onChange={(e) => handleChange(e)}
+                    displayEmpty
+                    required
+                    inputProps={{ "aria-label": "Without label" }}
+                    className={`${classes.select} ${classes.selectinput}`}
+                  >
+                    <MenuItem value="">
+                      <em className="select-name">Select Brand Name</em>
+                    </MenuItem>
+
+                    {brandlist.map((num, i) => (
+                      <MenuItem value={num.brand_id} key={num.brand_id}>
+                        {/* <div
                         style={{
                           display: "flex",
                           justifyContent: "space-around",
@@ -376,75 +369,94 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
                         <div style={{ width: "20%" }}>
                           <div style={{ width: "40px", height: "auto" }}>
                             <img
-                              src={`https://sayaraagroup.com/${num.brand_image}`} alt=''
+                              src={`https://sayaraagroup.com/${num.brand_image}`}
+                              alt=""
                               style={{ width: "100%", height: "100%" }}
                             />
                           </div>
                         </div>
-                      {/* </div> */}
-                    </MenuItem>
-                  ))}
-
-                  {/* <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem> */}
-                </Select>
-              </FormControl>
-
-              {/* <Searchinput /> */}
-              <FormControl sx={{ m: 1, ml: 0, mt: 2 }} className={classes.FORM}>
-                <Select
-                  style={{ height: "44px",display:'flex' }}
-                  value={inputValues.model_name}
-                  onChange={(e) => handleChange(e)}
-                  displayEmpty
-                  required
-                  name="model_name"
-                  inputProps={{ "aria-label": "Without label" }}
-                  className={`${classes.select} ${classes.selectinput}`}
-               
-                >
-                  <MenuItem value="">
-                    <em>Select Model Name</em>
-                  </MenuItem>
-                 
-                  {modallist.map((num,i)=>(
-                    <MenuItem value={num.model_name} key={i} >
-                      {/* <div style={{display:'flex',justifyContent:'space-around'}}> */}
-                        <div style={{widht:'40%'}}><em>{num.model_name}</em></div>  <div style={{width:'20%'}}><div style={{width:'40px',height:'auto'}}><img src={`https://sayaraagroup.com/${num.model_image}`} alt='' style={{width:'100%',height:'100%'}} /></div></div>
                         {/* </div> */}
-                        </MenuItem>
-                  ))}
-                  
-                  {/* <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem> */}
-                </Select>
-              </FormControl>
-              
-            </div>
-            <div className="dropdown-group" mt={4}>
-              <input
-                type="text"
-                className="homeName"
-                placeholder="Enter Name"
-                name='contact_name' value={inputValues.contact_name}
-                onChange={(e) => handleChange(e)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Enter email"
-                className="homeName email-home"
-                name="contact_email" value={inputValues.contact_email}
-                onChange={(e) => handleChange(e)}
-                required
-              />
-            </div>
+                      </MenuItem>
+                    ))}
 
-            <div style={{ textAlign: "center", marginTop: "20px" }}>
-              <Button variant="contained" type='submit' className="button-getfree">
-                Get Free Quotation
-              </Button>
-            </div>
+                    {/* <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem> */}
+                  </Select>
+                </FormControl>
+
+                {/* <Searchinput /> */}
+                <FormControl
+                  sx={{ m: 1, ml: 0, mt: 2 }}
+                  className={classes.FORM}
+                >
+                  <Select
+                    style={{ height: "44px", display: "flex" }}
+                    value={inputValues.model_name}
+                    onChange={(e) => handleChange(e)}
+                    displayEmpty
+                    required
+                    name="model_name"
+                    inputProps={{ "aria-label": "Without label" }}
+                    className={`${classes.select} ${classes.selectinput}`}
+                  >
+                    <MenuItem value="">
+                      <em className="select-name">Select Model Name</em>
+                    </MenuItem>
+
+                    {modallist.map((num, i) => (
+                      <MenuItem value={num.model_name} key={i}>
+                        {/* <div style={{display:'flex',justifyContent:'space-around'}}> */}
+                        <div style={{ widht: "40%" }}>
+                          <em>{num.model_name}</em>
+                        </div>{" "}
+                        <div style={{ width: "20%" }}>
+                          <div style={{ width: "40px", height: "auto" }}>
+                            <img
+                              src={`https://sayaraagroup.com/${num.model_image}`}
+                              alt=""
+                              style={{ width: "100%", height: "100%" }}
+                            />
+                          </div>
+                        </div>
+                        {/* </div> */}
+                      </MenuItem>
+                    ))}
+
+                    {/* <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem> */}
+                  </Select>
+                </FormControl>
+              </div>
+              <div className="dropdown-group" mt={4}>
+                <input
+                  type="text"
+                  className="homeName"
+                  placeholder="Enter Name"
+                  name="contact_name"
+                  value={inputValues.contact_name}
+                  onChange={(e) => handleChange(e)}
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Enter email"
+                  className="homeName email-home"
+                  name="contact_email"
+                  value={inputValues.contact_email}
+                  onChange={(e) => handleChange(e)}
+                  required
+                />
+              </div>
+
+              <div style={{ textAlign: "center", marginTop: "20px" }}>
+                <Button
+                  variant="contained"
+                  type="submit"
+                  className="button-getfree"
+                >
+                  Get Free Quotation
+                </Button>
+              </div>
             </form>
           </div>
         </div>
@@ -489,7 +501,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
                 </p>
               </div>
               <div className="content-head-right">
-                <NavLink className="about-link" to="/">
+                <NavLink className="about-link" to="/about">
                   Read More
                   <img src={RightArrow} className="about-link-icon" alt="" />
                 </NavLink>
@@ -524,7 +536,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
             </div>
             <div className="sayara-btngroup" style={{ marginTop: "23px" }}>
               <a
-                href="http://toappsto.re/sayaraa"
+                href="https://play.google.com/store/apps/details?id=com.sjainpune.sayaraa&hl=en"
                 target="_blank"
                 className="sayara-download-btn"
               >
@@ -539,7 +551,6 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
                   Read More
                   <img src={RightArrow} className="about-links" alt="" />
                 </NavLink>
-                {/* <a href="/">Learn more</a> */}
               </Button>
             </div>
           </div>
@@ -699,8 +710,8 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
             </div>
             <div></div>
           </div>
-          <div className="our-backbone-btn">
-            {/* <Button variant="contained" sx={{ mt: 2}} className='download-btn' >Download the App</Button> */}
+          {/* <div className="our-backbone-btn">
+          
             <Button
               variant="contained"
               sx={{ mt: 2, ml: 2 }}
@@ -716,7 +727,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
                 />
               </a>
             </Button>
-          </div>
+          </div> */}
         </div>
         <div className="ourbackbone-sliderweb">
           <Partnerslider />

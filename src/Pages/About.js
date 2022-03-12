@@ -235,7 +235,7 @@ const About = () => {
                 </Grid>
                 <Grid item mt={5} xs={6} xs={4} md={4} lg={4} xl={4}>
                   <div style={{ textAlign: "center" }} className="stack">
-                    <a className="downloadapp" href="http://toappsto.re/sayaraa" target="_blank">Download the App</a>
+                    <a className="downloadapp" href="https://play.google.com/store/apps/details?id=com.sjainpune.sayaraa&hl=en" target="_blank">Download the App</a>
                   </div>
                 </Grid>
               </Grid>

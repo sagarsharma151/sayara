@@ -6,11 +6,11 @@ const HeaderRoutes = {
         name: "Our offerings",
         link: "/offering",
       },
-      {
-        name: "How it Works",
-        link: "/contactus",
+      // {
+      //   name: "How it Works",
+      //   link: "/contactus",
   
-      },
+      // },
       {
         name: "Blog",
         link: "/blog",
@@ -26,7 +26,7 @@ const HeaderRoutes = {
 
   const PartnerHome = {
     homepartner: [
-      { name: "How it works", link: "/about" },
+      // { name: "How it works", link: "/about" },
       {
         name: "Requirments",
         link: "/offering",

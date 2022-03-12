@@ -63,10 +63,10 @@ const useStyles = makeStyles((theme) => ({
     //      display: 'flex'
     //    },
   },
-  btnget:{
-    "& .makeStyles-Formbtn-4":{
-      backgroundColor:'#151c28'
-    }
+  btnget: {
+    "& .makeStyles-Formbtn-4": {
+      backgroundColor: "#151c28",
+    },
   },
   select: {
     "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
@@ -75,11 +75,10 @@ const useStyles = makeStyles((theme) => ({
       },
   },
   Formbtn: {
-    "& .css-sghohy-MuiButtonBase-root-MuiButton-root":{
+    "& .css-sghohy-MuiButtonBase-root-MuiButton-root": {
       marginTop: "20px",
       backgroundColor: "#151c28",
-      
-    },  
+    },
     [theme.breakpoints.down("xs")]: {
       marginTop: "20px",
       backgroundColor: "#151c28",
@@ -134,64 +133,22 @@ const SecondHead = () => {
       setBrandlist(brandList.BrandList.BrandList.data);
     }
   }, [brandList]);
-  // React.useEffect(()=>{
-  //   FetchdataModallist();
-  // },[])
-  // const onSubmited = e => {
-  //   e.preventDefault();
-
-  // const newUser = {
-  // 	contact_name: contact_name,
-  // 	contactEmail: contactEmail,
-  // 	brand_name: brand_name,
-  // 	contactPhone: contactPhone,
-  //   model_name:model_name
-  // };
-  //   dispatch(FetchdataGetquotation(inputValues));
-  //   console.log(inputValues,'inputValues');
-  // };
 
   function handleChange(event) {
     const { name, value } = event.target;
+    dispatch(FetchdataModallist(value));
     setInputValue({ ...inputValues, [name]: value });
   }
-  // React.useEffect(() => {
-  //   Fetchdata();
-  // }, []);
 
-  // React.useEffect(() => {
-  //   if (ImageSlider && ImageSlider.ImageSlider.ImageSlider.data) {
-  //     setSlide(ImageSlider.ImageSlider.ImageSlider.data);
-  //   }
-  // }, [ImageSlider]);
-
-  // console.log('sdfldsflsflsf',ModalList.ModalList.data)
   const [modallist, setModallist] = React.useState([]);
-  // const [age, setAge] = React.useState("");
-  React.useEffect(() => {
-    dispatch(FetchdataModallist());
-  }, []);
   React.useEffect(() => {
     if (brandList && brandList.ModalList.ModalList.data) {
       setModallist(brandList.ModalList.ModalList.data);
     }
   }, [brandList]);
-
-  console.log("modallist", modallist);
-  // const handleChange = (event) => {
-  //     setAge(event.target.value);
-  //   };
   const classes = useStyles();
   const onSubmited = (e) => {
     e.preventDefault();
-
-    // const newUser = {
-    // 	contact_name: contact_name,
-    // 	contactEmail: contactEmail,
-    // 	brand_name: brand_name,
-    // 	contactPhone: contactPhone,
-    //   model_name:model_name
-    // };
     dispatch(FetchdataGetquotation(inputValues));
     if (inputValues) {
       toast.success("Thanks Your Quotation request received", {
@@ -267,7 +224,7 @@ const SecondHead = () => {
             </div>
             <form onSubmit={onSubmited}>
               <Grid container justifyContent="space-around">
-                <Grid item xs={5} md={12} xl={12} >
+                <Grid item xs={5} md={12} xl={12}>
                   <div>
                     <FormControl
                       sx={{ m: 1, ml: 0, mt: 2 }}
@@ -284,12 +241,14 @@ const SecondHead = () => {
                         className={`${classes.select} ${classes.selectinput}`}
                       >
                         <MenuItem value="">
-                          <em className="select-name">Select Brand Name</em>
+                          <em className="select-name select-names">
+                            Select Brand Name
+                          </em>
                         </MenuItem>
 
                         {brandlist.map((num, i) => (
                           <MenuItem
-                            value={num.brand_name}
+                            value={num.brand_id}
                             key={i}
                             className={classes.selectinput}
                           >
@@ -338,7 +297,9 @@ const SecondHead = () => {
                         className={`${classes.select} ${classes.selectinput}`}
                       >
                         <MenuItem value="">
-                          <em className="select-name">Select Modal Name</em>
+                          <em className="select-name select-name">
+                            Select Modal Name
+                          </em>
                         </MenuItem>
 
                         {modallist.map((num, i) => (
@@ -374,18 +335,20 @@ const SecondHead = () => {
            
             </div> */}
                 </Grid>
-                <Grid xs={5} md={12} xl={12}> <input
-                      type="text"
-                      className="homeNames"
-                      placeholder="Enter Name"
-                      name="contact_name"
-                      value={inputValues.contact_name}
-                      onChange={(e) => handleChange(e)}
-                      required
-                    /> </Grid>
+                <Grid xs={5} md={12} xl={12}>
+                  {" "}
+                  <input
+                    type="text"
+                    className="homeNames"
+                    placeholder="Enter Name"
+                    name="contact_name"
+                    value={inputValues.contact_name}
+                    onChange={(e) => handleChange(e)}
+                    required
+                  />{" "}
+                </Grid>
                 <Grid xs={5} md={12} xl={12}>
                   <div className="dropdowns">
-                   
                     <input
                       type="email"
                       placeholder="Enter email"
@@ -395,17 +358,18 @@ const SecondHead = () => {
                       onChange={(e) => handleChange(e)}
                       required
                     />
-
-                 
                   </div>
                 </Grid>
-                <Grid item xs={7} md={12} xl={12}>      <Button
-                      variant="contained"
-                      type="submit"
-                      className={classes.Formbtn}
-                    >
-                      Get Free Quotation
-                    </Button>   </Grid>
+                <Grid item xs={7} md={12} xl={12}>
+                  {" "}
+                  <Button
+                    variant="contained"
+                    type="submit"
+                    className={classes.Formbtn}
+                  >
+                    Get Free Quotation
+                  </Button>{" "}
+                </Grid>
               </Grid>
             </form>
           </Grid>
