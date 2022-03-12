@@ -58,7 +58,9 @@ const CarWash = ({ FetchdataCarlists, Carwashlist,search }) => {
           <div>
             <div className="card-heading ">
               {/* <h1>Exterior Wash</h1> */}
+              <h1>{carwashlist.company_name}</h1>
               <h1>{carwashlist.service_name}</h1>
+             
               <div className="card-ratings-withcontent">
                 <div className='para-style-carwash'>
                   {/* <p>By Almjra car wash, Opposite EMC, Musaffah-5 | 2 kms</p> */}

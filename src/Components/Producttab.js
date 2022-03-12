@@ -51,12 +51,14 @@ const Producttab = ({FetchdataCarproductlist,CarproductList,search})=>{
               <div className='card-main-heading1'>
                       <div>
                       {/* <h1>Wheel Balance</h1> */}
-                      <h1>{list.service_name}</h1>
+                      <h1 style={{lineHeight:'27px'}}>{list.company_name}</h1>
+                      <h1 style={{lineHeight:'31px'}}>{list.service_name}</h1>
+                      
                       </div>
                       <div className='add-div1'>
                           {/* <p className='add-para1'>AED 100</p> */}
                           <p className='add-para1' >{list.price}</p>
-                          <p className='line1'>AED 100</p>
+                          {/* <p className='line1'>AED 100</p> */}
                       </div>
                   </div>
                   

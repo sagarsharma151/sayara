@@ -44,12 +44,14 @@ servicelist.filter((value) => {
           <div className='card-main-heading1'>
                   <div>
                   {/* <h1>Exterior Wash</h1> */}
-                  <h1>{list.car_service_name}</h1>
+                  <h1 style={{lineHeight:'27px'}}>{list.company_name}</h1>
+                  <h1 style={{lineHeight:'31px'}}>{list.car_service_name}</h1>
+                 
                   </div>
                   <div className='add-div1'>
                       {/* <p className='add-para1'>AED 100</p> */}
                       <p className='add-para1'>{list.price}</p>
-                      <p className='line1'>AED 100</p>
+                      {/* <p className='line1'>AED 100</p> */}
                   </div>
               </div>
               

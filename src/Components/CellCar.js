@@ -49,7 +49,7 @@ modallist.filter((value) => {
                   <div className='add-div1'>
                       {/* <p className='add-para1'>AED 100</p> */}
                       <p className='add-para1'>{list.price}</p>
-                      <p className='line1'>AED 100</p>
+                      {/* <p className='line1'>AED 100</p> */}
                   </div>
               </div>
               
