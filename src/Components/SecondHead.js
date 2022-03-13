@@ -92,31 +92,13 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#151c28",
     },
   },
-  //  select :{
-  //    "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":{
-  //      display:'flex'
-  //    }
-  //  }
-  // button: {
-  //   color: "white",
-  //   [theme.breakpoints.down("xs")]: {
-  //     marginTop: theme.spacing(1),
-  //     backgroundColor: "purple"
-  //   },
-  //   [theme.breakpoints.between("sm", "md")]: {
-  //     marginTop: theme.spacing(3),
-  //     backgroundColor: "blue"
-  //   },
-  //   "@media (min-width: 1280px)": {
-  //     marginTop: theme.spacing(5),
-  //     backgroundColor: "red"
-  //   }
-  // }
+
 }));
 const SecondHead = () => {
   const [inputValues, setInputValue] = useState({
     brand_name: "",
     model_name: "",
+    type:""
   });
   // const handleChange = (event) => {
   //   setAge(event.target.value);
@@ -165,9 +147,17 @@ const SecondHead = () => {
         contact_email: "",
         brand_name: "",
         model_name: "",
+        type:""
       });
     }
   };
+  const staticvalue = [
+    {name:"Car Wash",value:'1'},
+    {name:"Buy or Sell Car",value:'2'},
+    {name:"Rent a Car",value:'3'},
+    {name:"Emergency Services",value:'4'},
+    {name:"Driving Instructor",value:'5'},
+  ]
   return (
     <>
       <Box sx={{ flexGrow: 1 }} style={{ background: "red" }}>
@@ -359,6 +349,47 @@ const SecondHead = () => {
                       required
                     />
                   </div>
+                  <FormControl
+                  sx={{ m: 1, ml: 0, mt: 2 }}
+                  className={classes.FORM}
+                >
+                  <Select
+                    style={{ height: "44px", display: "flex" }}
+                    value={inputValues.type}
+                    onChange={(e) => handleChange(e)}
+                    displayEmpty
+                    required
+                    name="type"
+                    inputProps={{ "aria-label": "Without label" }}
+                    className={`${classes.select} ${classes.selectinput}`}
+                  >
+                    <MenuItem value="">
+                      <em className="select-name">type Name</em>
+                    </MenuItem>
+
+                    {staticvalue.map((num, i) => (
+                      <MenuItem value={num.name} key={i}>
+                        {/* <div style={{display:'flex',justifyContent:'space-around'}}> */}
+                        <div style={{ widht: "40%" }}>
+                          <em>{num.name}</em>
+                        </div>{" "}
+                        {/* <div style={{ width: "20%" }}>
+                          <div style={{ width: "40px", height: "auto" }}>
+                            <img
+                              src={`https://sayaraagroup.com/${num.model_image}`}
+                              alt=""
+                              style={{ width: "100%", height: "100%" }}
+                            />
+                          </div>
+                        </div> */}
+                        {/* </div> */}
+                      </MenuItem>
+                    ))}
+
+                    {/* <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem> */}
+                  </Select>
+                </FormControl>
                 </Grid>
                 <Grid item xs={7} md={12} xl={12}>
                   {" "}

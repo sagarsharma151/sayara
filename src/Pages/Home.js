@@ -12,7 +12,7 @@ import MobilePartnerslider from "../Components/Partnermobslider";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useHistory ,Link} from "react-router-dom";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import CustmerMobilelist from "../Components/Custmermobile";
@@ -113,8 +113,8 @@ function Arrow(props) {
     props.type === "next" ? (
       <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" />
     ) : (
-      // <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" />
-      ""
+      <img src={btnIcon} style={{ width: "50px", height: "50px" ,transform:'rotate(180deg)' }} alt="" />
+   
     );
   return (
     <>
@@ -137,6 +137,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
     contact_email: "",
     brand_name: "",
     model_name: "",
+    type:""
   });
   const history = useHistory();
   const [brandlist, setBrandlist] = React.useState([]);
@@ -180,6 +181,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
         contact_email: "",
         brand_name: "",
         model_name: "",
+        type:""
       });
     }
   };
@@ -226,7 +228,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
 
   const renderSlides = () =>
     imageslide.map((num, i) => (
-      <div className="cards-list" key={i}>
+      <Link className='link block-card-link' to={`/productdetalis/${num.offer_id}`}><div className="cards-list" key={i}>
         <div className="card 1">
           <img
             src={`https://sayaraagroup.com/${num.image}`}
@@ -261,7 +263,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div></Link> 
     ));
 
   const imagesicon = [
@@ -321,7 +323,13 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
   // const handleChange = (event) => {
   //     setAge(event.target.value);
   //   };
-
+const staticvalue = [
+  {name:"Car Wash",value:'1'},
+  {name:"Buy or Sell Car",value:'2'},
+  {name:"Rent a Car",value:'3'},
+  {name:"Emergency Services",value:'4'},
+  {name:"Driving Instructor",value:'5'},
+]
   return (
     <div style={{ maxWidth: "100%" }}>
       <Header />
@@ -426,8 +434,10 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
                   <MenuItem value={30}>Thirty</MenuItem> */}
                   </Select>
                 </FormControl>
+                
               </div>
               <div className="dropdown-group" mt={4}>
+                
                 <input
                   type="text"
                   className="homeName"
@@ -447,7 +457,47 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
                   required
                 />
               </div>
+              <FormControl
+                  sx={{ m: 1, ml: 0, mt: 2 }}
+                  className={classes.FORM}
+                >
+                  <Select
+                    style={{ height: "44px", display: "flex" }}
+                    value={inputValues.type}
+                    onChange={(e) => handleChange(e)}
+                    displayEmpty
+                    required
+                    name="type"
+                    inputProps={{ "aria-label": "Without label" }}
+                    className={`${classes.select} ${classes.selectinput}`}
+                  >
+                    <MenuItem value="">
+                      <em className="select-name">type Name</em>
+                    </MenuItem>
 
+                    {staticvalue.map((num, i) => (
+                      <MenuItem value={num.name} key={i}>
+                        {/* <div style={{display:'flex',justifyContent:'space-around'}}> */}
+                        <div style={{ widht: "40%" }}>
+                          <em>{num.name}</em>
+                        </div>{" "}
+                        {/* <div style={{ width: "20%" }}>
+                          <div style={{ width: "40px", height: "auto" }}>
+                            <img
+                              src={`https://sayaraagroup.com/${num.model_image}`}
+                              alt=""
+                              style={{ width: "100%", height: "100%" }}
+                            />
+                          </div>
+                        </div> */}
+                        {/* </div> */}
+                      </MenuItem>
+                    ))}
+
+                    {/* <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem> */}
+                  </Select>
+                </FormControl>
               <div style={{ textAlign: "center", marginTop: "20px" }}>
                 <Button
                   variant="contained"

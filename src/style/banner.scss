@@ -888,10 +888,17 @@ color: #FFFFFF !important;
       }
       
       .prevArrow {
-        top: 71px;
-        left: -18px;
+        top: 125px;
+        left: 3px;
         z-index: 1;
       }
+
+      .prevArrow1 {
+        top: 125px;
+        left: -10px;
+        z-index: 1;
+      }
+      
       .about-info {
     // position: relative;
         color:#222;
@@ -1627,8 +1634,8 @@ margin-top: 0px;
   }
   
   .prevArrow {
-    top: 108px;
-    left: -4px;
+    top: 129px;
+    left: 10px;
     z-index: 1;
   }
   .about{

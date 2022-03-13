@@ -52,19 +52,22 @@ const Producttab = ({FetchdataCarproductlist,CarproductList,search})=>{
                       <div>
                       {/* <h1>Wheel Balance</h1> */}
                       <h1 style={{lineHeight:'27px'}}>{list.company_name}</h1>
-                      <h1 style={{lineHeight:'31px'}}>{list.service_name}</h1>
-                      
+                      <h2 style={{lineHeight:'31px'}} className='modal-cell'>{list.service_name}</h2>
+                      <h3 style={{lineHeight:'31px'}} className='additional-service'>{list.additional_sub_service_name}</h3>
+                      <p>{`width : ${list.width} and height : ${list.height} and rim size ${list.rim_size}`}</p>
                       </div>
                       <div className='add-div1'>
                           {/* <p className='add-para1'>AED 100</p> */}
                           <p className='add-para1' >{list.price}</p>
-                          {/* <p className='line1'>AED 100</p> */}
+                          <p className='line1'>AED 100</p>
                       </div>
                   </div>
                   
                   <div className='card-ratings-withcontent1'>
                       <div>
-                      <p>By Almjra car wash, Opposite EMC, Musaffah-5 | 2 kms</p>
+                      <p dangerouslySetInnerHTML={{ __html: list.service_details}}></p>
+                      <p dangerouslySetInnerHTML={{ __html: list.vendor_complimentry}}></p>
+                      <p dangerouslySetInnerHTML={{ __html:`vendor year : ${ list.vendor_year}`}}></p>
                       </div>
                       <div className='ratings-div1'>
                          <div className='ratingswithcontent-div1'>

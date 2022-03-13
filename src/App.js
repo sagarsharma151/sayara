@@ -15,7 +15,7 @@ import Privacyandcondition from '../src/Pages/Privacyandterms'
 import Contactus from '../src/Pages/Contactus'
 import Partnerhome from '../src/Pages/Partnerhome';
 import Multiform from '../src/Components/Multisteps/Multistep'
-
+import ProductDetails from '../src/Pages/ProductDetails'
 // import './App.css';
 const UserContext = createContext()
 function App() {
@@ -33,6 +33,7 @@ function App() {
         <Route exact path='/privacyandterms' component={Privacyandcondition} /> 
         <Route exact path='/contactus' component={Contactus} />
         <Route exact path='/partnerhome' component={Partnerhome} />
+<Route exact path='/productdetalis/:offer_id' component={ProductDetails} />
         {/* <Route exact path="/signup" component={Multiform} /> */}
      {/* <Route exact path="/otp" component={Otp} />
         <Route exact path='/login'  value={a} component={Login} /> */}

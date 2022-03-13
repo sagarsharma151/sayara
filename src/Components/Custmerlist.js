@@ -31,14 +31,14 @@ import DblMobile from "../images/dbl-mob.png";
 import appstore from "../images/appstore.png";
 import googleplay from "../images/googleplay.png";
 function Arrow(props) {
-  let className = props.type === "next" ? "nextArrow" : "prevArrow";
+  let className = props.type === "next" ? "nextArrow" : "prevArrow1";
   className += " arrow";
   const char =
     props.type === "next" ? (
       <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" />
     ) : (
-      // <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" /> 
-      ''
+      <img src={btnIcon} style={{ width: "50px", height: "50px",transform:'rotate(180deg)' }} alt="" /> 
+      
     );
   return (
     <>

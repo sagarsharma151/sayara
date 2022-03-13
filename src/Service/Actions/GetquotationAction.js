@@ -37,6 +37,7 @@ var formData = new FormData();
   formData.append('contact_email', newUser.contact_email)
   formData.append('brand_name', newUser.brand_name)
   formData.append('model_name', newUser.model_name)
+  formData.append('type', newUser.type)
   return (dispatch) => {
 
     dispatch(GetquotationRequest());

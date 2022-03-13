@@ -1,0 +1,130 @@
+.main-container-product{
+    width: 768px;
+    margin: 1.5rem auto;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 12px 20px;
+    }
+    .pdetails-btn{
+        background: #151c28;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    padding: 14px 39px;
+    border-radius: 10px;
+    color: white !important;
+    }
+    .plink{
+        color: white;
+    }
+    .heading-blog-flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .first-head{
+        font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FB7E15;
+    }
+    .details-heading-left-blog{
+     width:50%;
+    }
+    .details-heading-right-blog{
+        width: 50%;
+    }
+    .second-main-head{
+    font-family: 'poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #151C28;
+    }
+    .offerid-main-head{
+        font-family: 'poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 48px;
+        color: #151C28;
+    }
+    .read-date{
+        font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 59px;
+    text-align: right;
+    color: rgba(88, 85, 98, 0.6);
+    }
+    .main-div-img{
+        width: 100%;
+    }
+    .main-img{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .main-img img{
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+    }
+    .read-para{
+        font-family: 'Poppins';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 160%;
+    color: #585562;
+    }
+    .product-logo{
+        width: 90px;
+        height: auto;
+        float: right;
+    }
+    .product-logo-img{
+        width:100%;
+        height: auto;
+    }
+    @media screen and (max-width:600px) {
+        .main-container-product{
+            width: 100%;
+            margin: 1.5rem auto;
+            }
+            .offerid-main-head{
+                font-size: 12px;
+            }
+        // .details-heading-right-blog{
+        //         width: 100%;
+        //         max-width: 100%;
+        //         padding-right: 63px;
+        //     }
+        // .offerid-main-head{
+        //         text-align: center;
+        //     }
+        // .heading-blog-flex{
+        //     display: block;
+        // }
+        // .details-heading-left-blog{
+        //     width:100%;
+     
+        //    }
+    }
+    
+    @media  (min-width:768px) and (max-width:968px){
+        // .heading-blog-flex{
+        //     display: block;
+        // }
+    //     .details-heading-left-blog{
+    //         width:100%;
+    //         .details-heading-right-blog{
+    //     width: 100%;
+    // padding-right: 63px;
+    // }
+    //        }
+    }

@@ -37,8 +37,8 @@ function Arrow(props) {
       props.type === "next" ? (
         <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" />
       ) : (
-        // <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" /> 
-        ''
+        <img src={btnIcon} style={{ width: "50px", height: "50px",transform:'rotate(180deg)' }} alt="" /> 
+        
       );
     return (
       <>
