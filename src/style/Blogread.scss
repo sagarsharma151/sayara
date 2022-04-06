@@ -2,6 +2,100 @@
 width: 768px;
 margin: 1.5rem auto;
 }
+// body {
+//     font-family: "Roboto", sans-serif;
+//     padding: 0;
+//     margin: 0;
+//     background-color: #f5f5f5;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//   }
+  .containers{
+    width: 510px;
+    margin: 2.3rem auto;;
+  }
+  .cookiesContent {
+    width: 510px;
+    display: flex;
+    box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 20px;
+    // padding: 30px 30px 70px;
+
+    // img {
+    //   width: 82px;
+    //   margin-bottom: 15px;
+    // }
+    p {
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+    button.accept {
+        background: #151C28;
+        border-radius: 8px;
+      border: none;
+      padding: 20px 56px;
+ float: right;
+      width: 183px;
+      height: 64px;
+      font-size: 16px;
+      color: white;
+      box-shadow: 0px 6px 18px -5px rgba(237, 103, 85, 1);
+    }
+  }
+  .btngotit{
+    width: 100%;
+    /* margin: 23px; */
+    padding: 14px;}
+  .modal-content{
+    position: absolute;
+    top: 41px;
+    text-align: center;
+    align-self: center;
+    width: 100%;
+  }
+  .discount-div{
+    position: absolute;
+    top: 138px;
+    left: 37%;
+    background: #EC7735;
+    border-radius: 48px;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 163px;
+height: 56px;   
+  }
+.close {
+    width: 30px;
+    font-size: 20px;
+    color: #c0c5cb;
+    align-self: flex-end !important;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 10px;
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 9px;
+    cursor: pointer;
+  }
+  .modal-img{
+      width: 100%;
+      height: auto;
+      border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+
+
+
+  }
 .heading-blog-flex{
     display: flex;
 }
@@ -26,6 +120,72 @@ font-weight: 600;
 font-size: 32px;
 line-height: 48px;
 color: #151C28;
+}
+.modal-text{
+    margin-top: 134px;
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 120%;
+/* identical to box height, or 17px */
+
+
+color: #151C28;
+}
+.content-text-style{
+    text-align: left;
+    padding-left: 30px;
+}
+.about-inside{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 140%;
+/* identical to box height, or 17px */
+
+
+color: #585562;
+}
+.modal-main-text{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 120%;
+/* identical to box height, or 24px */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+.about-inside p{
+    margin-bottom: 5px;
+}
+.modal-second-text{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 120%;
+/* identical to box height, or 17px */
+margin-top: 10px;
+text-align: center;
+
+color: rgba(255, 255, 255, 0.7);
+}
+.discount-text{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 120%;
+/* identical to box height, or 24px */
+
+text-align: center;
+
+color: #FFFFFF;
 }
 .read-date{
     font-family: 'Poppins';

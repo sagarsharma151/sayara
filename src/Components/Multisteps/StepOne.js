@@ -45,6 +45,10 @@ const useStyles = makeStyles({
       paddingBottom: "30px",
       marginTop: "18px",
     },
+    "& .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root":{
+      backgroundColor:"#F4F6FA",
+      border:'none'
+    }
   },
 });
 //  const Item = styled(Paper)(({ theme }) => ({
@@ -110,7 +114,7 @@ const StepOne = () => {
         <Typography variant="h5" className={classes.heading}>
           Contact
         </Typography>
-        <div className={classes.formContainer}>
+        <div>
           <Grid container spacing={2} mt={5} className='form-multi-container'>
             <Grid item xs={10} md={6} xl={6}>
               <div className="input-div">

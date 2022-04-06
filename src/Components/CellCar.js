@@ -43,7 +43,7 @@ modallist.filter((value) => {
           <div className='card-heading1 '>
           <div className='card-main-heading1'>
                   <div>
-                  {/* <h1>Exterior Wash</h1> */}
+                
                   <h1>{list.brand}</h1>
                   <h2 className='modal-cell'>{list.model}</h2>
                   <p className='modal-cell'>{list.fuel}</p>
@@ -51,9 +51,9 @@ modallist.filter((value) => {
                   </div>
                   <div className='add-div1'>
                       {/* <p className='add-para1'>AED 100</p> */}
-                      <p className='add-para1'>{list.km} km</p>
-                      <p className='add-para1'>{list.price}</p>
-                      <p className='line1'>AED 100</p>
+                      {/* <p className='add-para1'>{list.km} km</p> */}
+                      <p className='add-para1'>AED {list.price}</p>
+                      {/* <p className='line1'>AED 100</p> */}
                   </div>
               </div>
               

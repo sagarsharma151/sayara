@@ -1549,6 +1549,9 @@ border-radius: 16px;
 }
 
 @media screen and(max-width:768px) {
+  .mobile-card{
+    display: block;
+  }
   .main{
     display: block;
     justify-content: space-between;
@@ -1571,6 +1574,9 @@ border-radius: 16px;
 
 
 @media screen and(max-width:600px){
+  .sayara-offering-pkg .car-setting{
+    width: 144px;
+  }
   .email-home{
     margin-right: 8px;
     margin-top: 10px;
@@ -1662,9 +1668,10 @@ margin-top: 0px;
   .about-info {
     // position: relative;
         color:#222;
-        display: block;
+        display: flex;
         align-items: center;
         margin-top: 25px;
+        flex-wrap: wrap;
         // padding: 0px 60px;
         .content-head-left{
         padding-top:20px;
@@ -1703,10 +1710,11 @@ margin-top: 0px;
             text-align: center;
           }
         }
+
         .about-images{
           margin: 0 auto;
-          margin-top: 94px;
-          width: 90%;
+          margin-top: 25px;
+          width: 38%;
           height: auto;
           padding-right: 0px;
           // position: relative;
@@ -1716,6 +1724,9 @@ margin-top: 0px;
             height: 100%;
             border-radius: 10px;
           }
+        }
+        .top-img{
+          margin-top: 90px;
         }
         .App {
           font-family: sans-serif;
@@ -2025,12 +2036,19 @@ margin-top: 0px;
     .our-backbone-btn{
       width: 100%;
     }
+    .mobile-card{
+      display: block;
+    }
+    .homeslider-main-div{
+      text-align: center;
+    }
   .cards-list {
     z-index: 0;
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
     .card {
       background-color: red;
       margin: 30px auto;
@@ -2251,20 +2269,21 @@ margin-top: 0px;
   height:auto;
 }
 .homeslider-main-div{
-  background-color: yellow;
-    padding: 8px 8px;
+  // background-color: yellow;
+    padding: 0px 8px;
     border-top-left-radius:10px;
     border-bottom-right-radius: 10px;
     width:257px;
 }
 @media screen and(max-width:600px){
   .homeslider-main-div{
-    background-color: yellow;
-      padding: 8px 8px;
+    // background-color: yellow;
+      padding: 0px 8px;
       border-top-left-radius:10px;
       border-bottom-right-radius: 10px;
       width:193px !important;
   }
+  
   .footer{
     display:flex;
     justify-content:space-between;
@@ -2326,7 +2345,7 @@ margin-top: 0px;
   }
   
   .footer-content{
-    width: 30%;
+    width: 50%;
      height:100%;
       margin: 0 auto;
   }
@@ -2387,11 +2406,12 @@ margin-top: 0px;
     padding-bottom:25px;
   }
   .homeslider-main-div{
-    background-color: yellow;
+    // background-color: yellow;
       padding: 8px 8px;
       border-top-left-radius:10px;
       border-bottom-right-radius: 10px;
       width:193px;
+      margin: 0 auto;
   }
   .footers{
     display:flex;
@@ -2444,7 +2464,7 @@ margin-top: 0px;
   }
   
   .footer-content{
-    width: 30%;
+    width: 50%;
      height:100%;
       margin: 0 auto;
   }
@@ -2995,6 +3015,9 @@ margin-top: 0px;
     flex-direction: column;
   }
 }
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{
+background-color: transparent !important;
+}
 @media screen and (max-width:600px) {
   .icon-div-homeicon{
     height: 50px;
@@ -3014,5 +3037,8 @@ margin-top: 0px;
     margin: 0;
      border:none;
     border-radius: none;
+  }
+  .mobile-card{
+    display: block;
   }
 }

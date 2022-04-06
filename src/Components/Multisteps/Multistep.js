@@ -99,6 +99,7 @@ const Multistep = () => {
     }
 
     const handleNext = (e) => {
+      console.log(e,'eeeeeeeeeeeeeeeeee')
       e.preventDefault()
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
       };

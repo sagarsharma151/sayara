@@ -5,14 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { Fetchdata } from "../Service";
 import Custmerlist from "../Components/Custmerlist";
 import car from "../../src/images/download.png";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Partnerslider from "../Components/Partnerslider";
 import MobilePartnerslider from "../Components/Partnermobslider";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import { NavLink, useHistory ,Link} from "react-router-dom";
+import { NavLink,  Link } from "react-router-dom";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import CustmerMobilelist from "../Components/Custmermobile";
@@ -63,23 +63,14 @@ const useStyles = makeStyles((theme) => ({
       height: "55px",
     },
     [theme.breakpoints.between("sm", "md")]: {
-      minWidth: " 145px",
       width: "145px",
       minWidth: " 145px",
-      width: "145px",
+     
     },
     "@media (min-width: 1280px)": {
       minWidth: " 220px",
       width: "220px",
     },
-    // "& .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root":{
-    //   minWidth:' 220px',
-    //   width: '220px'
-    // },
-
-    //    '& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input':{
-    //      display: 'flex'
-    //    },
   },
   select: {
     "& .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
@@ -87,25 +78,8 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
       },
   },
-  // button: {
-  //   color: "white",
-  //   [theme.breakpoints.down("xs")]: {
-  //     marginTop: theme.spacing(1),
-  //     backgroundColor: "purple"
-  //   },
-  //   [theme.breakpoints.between("sm", "md")]: {
-  //     marginTop: theme.spacing(3),
-  //     backgroundColor: "blue"
-  //   },
-  //   "@media (min-width: 1280px)": {
-  //     marginTop: theme.spacing(5),
-  //     backgroundColor: "red"
-  //   }
-  // }
 }));
-// const useStyles = makeStyles({
 
-// });
 function Arrow(props) {
   let className = props.type === "next" ? "nextArrow" : "prevArrow";
   className += " arrow";
@@ -113,8 +87,11 @@ function Arrow(props) {
     props.type === "next" ? (
       <img src={btnIcon} style={{ width: "50px", height: "50px" }} alt="" />
     ) : (
-      <img src={btnIcon} style={{ width: "50px", height: "50px" ,transform:'rotate(180deg)' }} alt="" />
-   
+      <img
+        src={btnIcon}
+        style={{ width: "50px", height: "50px", transform: "rotate(180deg)" }}
+        alt=""
+      />
     );
   return (
     <>
@@ -137,16 +114,15 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
     contact_email: "",
     brand_name: "",
     model_name: "",
-    type:""
+    type: "",
   });
-  const history = useHistory();
   const [brandlist, setBrandlist] = React.useState([]);
   const brandList = useSelector((state) => state);
   console.log("brandList123", brandList);
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(FetchdataBrandList());
-  }, []);
+  }, [dispatch]);
   React.useEffect(() => {
     if (brandList && brandList.BrandList.BrandList.data) {
       setBrandlist(brandList.BrandList.BrandList.data);
@@ -158,13 +134,6 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
   const onSubmited = (e) => {
     e.preventDefault();
 
-    // const newUser = {
-    // 	contact_name: contact_name,
-    // 	contactEmail: contactEmail,
-    // 	brand_name: brand_name,
-    // 	contactPhone: contactPhone,
-    //   model_name:model_name
-    // };
     dispatch(FetchdataGetquotation(inputValues));
     if (inputValues) {
       toast.success("Thanks Your Quotation request received", {
@@ -181,7 +150,7 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
         contact_email: "",
         brand_name: "",
         model_name: "",
-        type:""
+        type: "",
       });
     }
   };
@@ -201,9 +170,6 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
       setSlide(ImageSlider.ImageSlider.ImageSlider.data);
     }
   }, [ImageSlider]);
-  // const handleChanges = (event) => {
-  //   setBrand(event.target.value);
-  // };
 
   var settingsweb = {
     dots: true,
@@ -228,42 +194,48 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
 
   const renderSlides = () =>
     imageslide.map((num, i) => (
-      <Link className='link block-card-link' to={`/productdetalis/${num.offer_id}`}><div className="cards-list" key={i}>
-        <div className="card 1">
-          <img
-            src={`https://sayaraagroup.com/${num.image}`}
-            className="slider-images"
-            alt=""
-          />
-          <div className="card_heading heading-white">
-            <p>{num.title}</p>
-          </div>
-          <div className="card_title title-white">
-            <p>
-              Get an{" "}
-              <span style={{ fontWeight: "bold" }}>Get instant discount</span>{" "}
-              <br /> of {num.promo_discount}%{" "}
-              <span style={{ fontSize: "18px", fontWeight: "bold" }}>
-                for the
-              </span>{" "}
-              steam wash<br />
-              <br />{" "}
-            </p>
-            <div className="homeslider-main-div">
-              <p
-                style={{
-                  fontSize: "18px",
-                  color: "black",
-                  lineHeight: "27px",
-                }}
-              >
-                {/* Express gold wash */}
-                {num.company_name}
-              </p>{" "}
+      <Link
+        className="link block-card-link"
+        to={`/productdetalis/${num.offer_id}`}
+      >
+        <div className="cards-list mobile-card" key={i}>
+          <div className="card 1">
+            <img
+              src={`https://sayaraagroup.com/${num.image}`}
+              className="slider-images"
+              alt=""
+            />
+            <div className="card_heading heading-white">
+              <p>{num.title}</p>
+            </div>
+            <div className="card_title title-white">
+              <p>
+                Get an{" "}
+                <span style={{ fontWeight: "bold" }}>Get instant discount</span>{" "}
+                <br /> of {num.promo_discount}%{" "}
+                <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                  for the
+                </span>{" "}
+                steam wash
+                <br />
+                <br />{" "}
+              </p>
             </div>
           </div>
+          <div className="homeslider-main-div">
+            <p
+              style={{
+                fontSize: "18px",
+                color: "black",
+                lineHeight: "27px",
+              }}
+            >
+              {/* Express gold wash */}
+              {num.company_name}
+            </p>{" "}
+          </div>
         </div>
-      </div></Link> 
+      </Link>
     ));
 
   const imagesicon = [
@@ -323,13 +295,13 @@ const Home = ({ Fetchdata, CustomerRevielist, ...ImageSlider }) => {
   // const handleChange = (event) => {
   //     setAge(event.target.value);
   //   };
-const staticvalue = [
-  {name:"Car Wash",value:'1'},
-  {name:"Buy or Sell Car",value:'2'},
-  {name:"Rent a Car",value:'3'},
-  {name:"Emergency Services",value:'4'},
-  {name:"Driving Instructor",value:'5'},
-]
+  const staticvalue = [
+    { name: "Car Wash", value: "1" },
+    { name: "Buy or Sell Car", value: "2" },
+    { name: "Rent a Car", value: "3" },
+    { name: "Emergency Services", value: "4" },
+    { name: "Driving Instructor", value: "5" },
+  ];
   return (
     <div style={{ maxWidth: "100%" }}>
       <Header />
@@ -434,10 +406,8 @@ const staticvalue = [
                   <MenuItem value={30}>Thirty</MenuItem> */}
                   </Select>
                 </FormControl>
-                
               </div>
               <div className="dropdown-group" mt={4}>
-                
                 <input
                   type="text"
                   className="homeName"
@@ -457,31 +427,28 @@ const staticvalue = [
                   required
                 />
               </div>
-              <FormControl
-                  sx={{ m: 1, ml: 0, mt: 2 }}
-                  className={classes.FORM}
+              <FormControl sx={{ m: 1, ml: 0, mt: 2 }} className={classes.FORM}>
+                <Select
+                  style={{ height: "44px", display: "flex" }}
+                  value={inputValues.type}
+                  onChange={(e) => handleChange(e)}
+                  displayEmpty
+                  required
+                  name="type"
+                  inputProps={{ "aria-label": "Without label" }}
+                  className={`${classes.select} ${classes.selectinput}`}
                 >
-                  <Select
-                    style={{ height: "44px", display: "flex" }}
-                    value={inputValues.type}
-                    onChange={(e) => handleChange(e)}
-                    displayEmpty
-                    required
-                    name="type"
-                    inputProps={{ "aria-label": "Without label" }}
-                    className={`${classes.select} ${classes.selectinput}`}
-                  >
-                    <MenuItem value="">
-                      <em className="select-name">type Name</em>
-                    </MenuItem>
+                  <MenuItem value="">
+                    <em className="select-name">Service type</em>
+                  </MenuItem>
 
-                    {staticvalue.map((num, i) => (
-                      <MenuItem value={num.name} key={i}>
-                        {/* <div style={{display:'flex',justifyContent:'space-around'}}> */}
-                        <div style={{ widht: "40%" }}>
-                          <em>{num.name}</em>
-                        </div>{" "}
-                        {/* <div style={{ width: "20%" }}>
+                  {staticvalue.map((num, i) => (
+                    <MenuItem value={num.name} key={i}>
+                      {/* <div style={{display:'flex',justifyContent:'space-around'}}> */}
+                      <div style={{ widht: "40%" }}>
+                        <em>{num.name}</em>
+                      </div>{" "}
+                      {/* <div style={{ width: "20%" }}>
                           <div style={{ width: "40px", height: "auto" }}>
                             <img
                               src={`https://sayaraagroup.com/${num.model_image}`}
@@ -490,14 +457,12 @@ const staticvalue = [
                             />
                           </div>
                         </div> */}
-                        {/* </div> */}
-                      </MenuItem>
-                    ))}
+                      {/* </div> */}
+                    </MenuItem>
+                  ))}
 
-                    {/* <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem> */}
-                  </Select>
-                </FormControl>
+                </Select>
+              </FormControl>
               <div style={{ textAlign: "center", marginTop: "20px" }}>
                 <Button
                   variant="contained"
@@ -556,16 +521,16 @@ const staticvalue = [
                   <img src={RightArrow} className="about-link-icon" alt="" />
                 </NavLink>
               </div>
-              <div className="about-images">
+              <div className="about-images top-img">
                 <img src={engine} alt="" />
               </div>
-              <div className="about-images">
+              <div className="about-images top-img">
                 <img src={car1} alt="" />
               </div>
-              <div className="about-images">
+              <div className="about-images ">
                 <img src={car2} alt="" />
               </div>
-              <div className="about-images">
+              <div className="about-images ">
                 <img src={car3} alt="" />
               </div>
             </div>
@@ -587,7 +552,7 @@ const staticvalue = [
             <div className="sayara-btngroup" style={{ marginTop: "23px" }}>
               <a
                 href="https://play.google.com/store/apps/details?id=com.sjainpune.sayaraa&hl=en"
-                target="_blank"
+                target="_blank" rel="noreferrer"
                 className="sayara-download-btn"
               >
                 Download the App
@@ -612,7 +577,7 @@ const staticvalue = [
                 </div>
                 <div className="icon-maindiv-home">
                   <div className="icon-div-homeicon">
-                    <img src={carwashicon} className="icon-images-home" />
+                    <img src={carwashicon} className="icon-images-home" alt=''/>
                   </div>
 
                   <div className="icon-maindiv-heading">
@@ -806,7 +771,7 @@ const staticvalue = [
                 <div>
                   <a
                     href="https://play.google.com/store/apps/details?id=com.sjainpune.sayaraa&hl=en"
-                    target="_blank"
+                    target="_blank" rel="noreferrer"
                   >
                     {" "}
                     <img src={googleplay} alt="" />
@@ -816,6 +781,7 @@ const staticvalue = [
               <div className="social-flex2">
                 <div>
                   <a
+                  rel="noreferrer"
                     href="https://apps.apple.com/in/app/sayaraa/id1491527366"
                     target="_blank"
                   >

@@ -70,7 +70,7 @@ const Footer =()=>{
             className="footer-content-flex1"
           >
           <div>
-           <div> <Link className='footer-links' to='/partnerhome'>Become Partner</Link></div>
+           {/* <div> <Link className='footer-links' to='/partnerhome'>Become Partner</Link></div> */}
            {/* <div> <Link className='footer-links' to='/login'>Customer Log in</Link></div>  */}
            </div>
           </div>

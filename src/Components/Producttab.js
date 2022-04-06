@@ -5,8 +5,6 @@ import React ,{useEffect,useState} from 'react';
 import {connect} from 'react-redux'
 import {FetchdataCarproductlist} from '../Service'
 import Grid from '@mui/material/Grid';
-import washcard from '../images/washcard.png';
-import Right from '../images/right.png'
 import '../style/Carservice.scss';
 import Star from '../images/Star 1.png'
 // const Item = styled(Paper)(({ theme }) => ({
@@ -25,19 +23,20 @@ const Producttab = ({FetchdataCarproductlist,CarproductList,search})=>{
         if(CarproductList && CarproductList.CarproductList.data){
             setProductlist(CarproductList.CarproductList.data)
         }
-    })
+    },[])
 
     const Productlistshow = ()=>
     productlist.filter((value) => {
         if (search === "") {
+          // // searchTerm is in scope?
           return value;
         } else if (
           value.service_name.toLowerCase().includes(search.toLowerCase())
         ) {
-          return value;
+          return value; // would be better to do: return true;
         }
-      }).map((list,index)=>(
-        <Grid container spacing={2} className='main1' key={index}>
+      }).map((list,index)=>( 
+        <Grid container spacing={2} className='main1' key={index}> 
         <Grid item  xs={12} md={4} xl={4}>
             <div>
               <div className='car-img-div1'>
@@ -58,8 +57,8 @@ const Producttab = ({FetchdataCarproductlist,CarproductList,search})=>{
                       </div>
                       <div className='add-div1'>
                           {/* <p className='add-para1'>AED 100</p> */}
-                          <p className='add-para1' >{list.price}</p>
-                          <p className='line1'>AED 100</p>
+                          <p className='add-para1' >AED {list.price}</p>
+                          {/* <p className='line1'>AED 100</p> */}
                       </div>
                   </div>
                   

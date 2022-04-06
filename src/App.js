@@ -1,7 +1,8 @@
 import React ,{createContext,useState} from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Login from '../src/Components/Login'
+import {  Route } from "react-router-dom";
+// import Login from '../src/Components/Login'
 import "./style/index.scss";
+import { CssBaseline, Container, Paper, Box } from "@material-ui/core";
 import Blog from '../src/Components/Blog';
 // import Otp from '../src/Components/Otp'
 // Components
@@ -14,7 +15,7 @@ import About from "./Pages/About";
 import Privacyandcondition from '../src/Pages/Privacyandterms'
 import Contactus from '../src/Pages/Contactus'
 import Partnerhome from '../src/Pages/Partnerhome';
-import Multiform from '../src/Components/Multisteps/Multistep'
+import Multiform from '../src/Components/Multisteps/Steper'
 import ProductDetails from '../src/Pages/ProductDetails'
 // import './App.css';
 const UserContext = createContext()
@@ -34,7 +35,26 @@ function App() {
         <Route exact path='/contactus' component={Contactus} />
         <Route exact path='/partnerhome' component={Partnerhome} />
 <Route exact path='/productdetalis/:offer_id' component={ProductDetails} />
-        {/* <Route exact path="/signup" component={Multiform} /> */}
+        <Route exact path="/signup" >
+     <div>
+       <div className="form-image-background">
+       <div className='form-content-div'>
+           <div className='form-content-div-second'>
+             <h1 className='form-headings'>
+             Come Partner with us
+             </h1>
+             <p className='form-para'>Please complete all needed fields for registration and enjoy receiving more customers.</p>
+           </div>
+         </div>
+       </div>
+       <CssBaseline />
+      <Container component={Box} className='form-position' p={4}>
+        <Paper component={Box} p={3}>
+          <Multiform />
+        </Paper>
+      </Container>
+     </div>
+      </Route>
      {/* <Route exact path="/otp" component={Otp} />
         <Route exact path='/login'  value={a} component={Login} /> */}
         

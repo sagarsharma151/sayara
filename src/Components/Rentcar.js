@@ -45,7 +45,8 @@ servicelist.filter((value) => {
           <div className='card-main-heading1'>
                   <div>
                   {/* <h1>Exterior Wash</h1> */}
-                  <h1 >{list.brand_name}</h1>
+                  <h1>{list.company_name}</h1>
+                  <h1 className='modal-cell'>{list.brand_name}</h1>
                   <h1 className='modal-cell'>{list.model_name}</h1>
                   <h3 className='additional-service'>{list.body_type}</h3>
                   <p dangerouslySetInnerHTML={{ __html:`fuel type : ${list.fuel_type} `}}></p>
@@ -53,8 +54,8 @@ servicelist.filter((value) => {
                   </div>
                   <div className='add-div1'>
                       {/* <p className='add-para1'>AED 100</p> */}
-                      <p className='add-para1'>{list.price}</p>
-                      <p className='line1'>AED 100</p>
+                      <p className='add-para1'>AED {list.price}</p>
+                      {/* <p className='line1'>AED 100</p> */}
                   </div>
               </div>
               

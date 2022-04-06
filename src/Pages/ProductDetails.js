@@ -1,10 +1,13 @@
 import React,{useEffect,useState} from 'react';
 import '../style/Blogread.scss'
+
 import {useParams} from "react-router-dom"
 import {Link} from 'react-router-dom'
 import cardero from '../images/cardero.png'
 import Button from "@mui/material/Button";
 import Header from '../Header'
+import discount from '../images/discount 1.png'
+import formmain from '../images/form-main.png'
 import '../style/productdetails.scss'
 import {connect} from 'react-redux'
 import { Fetchdata } from "../Service";
@@ -36,19 +39,37 @@ console.log(thisProduct,'blockreadblockreadblockreadblockreadblockread')
 
   return (
     <div>
+
     <Header />
+    {thisProduct &&   <div class="containers">
+   
+    
+  <div class="cookiesContent" id="cookiesPopup">
+  
+  <div style={{height:'100px', width:'100%',position:'relative'}}> <a href="/" className="close">✖</a><img src={formmain} className='modal-img' alt="cookies-img" />
+    <div className="modal-content"><h1 className='modal-main-text'>{thisProduct.company_name}</h1>
+    <h5  className='modal-second-text'>dfgfdgdfgdfg </h5></div> <div className='discount-div'><img src={discount} alt=''/><span className='discount-text'> {thisProduct.promo_discount}% OFF</span></div></div>
+    
+    
+  <div>  <p className='modal-text content-text-style'>About Vendor<br></br><span className='about-inside'> <p className='read-para' dangerouslySetInnerHTML={{ __html: thisProduct.company_details}}></p></span></p>
+    <p className='content-text-style'>Service <br></br><span className='about-inside'>{thisProduct.service_name} </span></p>
+   </div>
+   <div className="btngotit">  <button class="accept">Ok, got it</button></div>
+  
+  </div>
+</div>}
     {thisProduct && <div className='main-container-product'>
 
 <div style={{width:'100%'}}>
-<div className='heading-blog-flex'>
-  <div className='details-heading-left-blog'>
+<div className='heading-product-details'>
+  {/* <div className='details-heading-left-blog'>
         <div>
             <h1 className='offerid-main-head'>
         
      OfferId:   {thisProduct.offer_id}
         </h1>
         </div>
-  </div>
+  </div> */}
   
   <div className='details-heading-right-blog'>
   <div className='product-logo'>
@@ -139,7 +160,7 @@ console.log(thisProduct,'blockreadblockreadblockreadblockreadblockread')
         <div>
             <h1 className='offerid-main-head'>
         
-            Company Email : &nbsp; 
+            Google Address : &nbsp; 
         </h1>
         </div>
   </div>
@@ -148,7 +169,7 @@ console.log(thisProduct,'blockreadblockreadblockreadblockreadblockread')
     <div>
       
             {/* 15 Nov, 2021 */}
-            <p className='read-date'>   <p className='read-para' dangerouslySetInnerHTML={{ __html: thisProduct.company_email}}></p></p>
+            <p className='read-date'>   <p className='read-para' dangerouslySetInnerHTML={{ __html:thisProduct.google_address}}></p></p>
     </div>
   </div>
 
