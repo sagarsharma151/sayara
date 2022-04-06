@@ -71,7 +71,7 @@ const Footer =()=>{
           >
           <div>
            {/* <div> <Link className='footer-links' to='/partnerhome'>Become Partner</Link></div> */}
-           {/* <div> <Link className='footer-links' to='/login'>Customer Log in</Link></div>  */}
+           <div> <Link className='footer-links' to='/signup'>Customer Sign up</Link></div> 
            </div>
           </div>
           <div
